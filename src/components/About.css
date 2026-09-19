@@ -1,0 +1,107 @@
+.about__intro {
+  max-width: 720px;
+}
+
+.about__intro p {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about__intro p:last-child {
+  margin-bottom: 0;
+}
+
+.about__divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 56px 0;
+}
+
+.about__subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+/* Strengths — open grid, no heavy cards */
+.about__strengths {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 40px;
+}
+
+.about__strength {
+  border-top: 2px solid var(--border);
+  padding-top: 20px;
+}
+
+.about__strength h4 {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.about__strength p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Toolkit — labeled rows */
+.about__toolkit {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about__toolkit-row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about__toolkit-row:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.about__toolkit-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.about__toolkit-items {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about__strengths {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .about__toolkit-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__strengths {
+    grid-template-columns: 1fr;
+  }
+}

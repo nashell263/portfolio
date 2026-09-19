@@ -1,0 +1,109 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.nav--scrolled {
+  background: rgba(17, 17, 17, 0.95);
+  border-bottom-color: var(--border);
+}
+
+.nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.nav__links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav__link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.nav__link:hover {
+  color: var(--text);
+}
+
+.nav__cta {
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.nav__hamburger {
+  display: none;
+  width: 24px;
+  height: 18px;
+  position: relative;
+  z-index: 101;
+}
+
+.nav__hamburger span {
+  display: block;
+  position: absolute;
+  height: 1.5px;
+  width: 100%;
+  background: var(--text);
+  left: 0;
+  transition: 0.25s ease;
+}
+
+.nav__hamburger span:nth-child(1) { top: 0; }
+.nav__hamburger span:nth-child(2) { top: 8px; }
+.nav__hamburger span:nth-child(3) { top: 16px; }
+
+.nav__hamburger.open span:nth-child(1) { top: 8px; transform: rotate(45deg); }
+.nav__hamburger.open span:nth-child(2) { opacity: 0; }
+.nav__hamburger.open span:nth-child(3) { top: 8px; transform: rotate(-45deg); }
+
+.nav__mobile {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+.nav__mobile-link {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.nav__mobile-link:hover {
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .nav__inner { padding: 0 20px; }
+  .nav__links, .nav__cta { display: none; }
+  .nav__hamburger { display: block; }
+}

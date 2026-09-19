@@ -1,0 +1,129 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0 40px;
+}
+
+.home__inner {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.home__greeting {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.home__title {
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.home__title-accent {
+  color: var(--accent);
+}
+
+.home__description {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 28px;
+}
+
+.home__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+.home__status-dot {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.home__actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.home__links {
+  display: flex;
+  gap: 16px;
+}
+
+.home__links a {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+  display: flex;
+}
+
+.home__links a:hover {
+  color: var(--text);
+}
+
+/* Portrait — editorial, not circular */
+.home__portrait {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home__portrait img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .home__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .home__content {
+    order: 2;
+  }
+
+  .home__portrait {
+    order: 1;
+    justify-content: center;
+  }
+
+  .home__portrait img {
+    max-width: 300px;
+    max-height: 400px;
+  }
+
+  .home__description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home__actions, .home__links, .home__status {
+    justify-content: center;
+  }
+}
