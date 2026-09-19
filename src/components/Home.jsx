@@ -1,4 +1,5 @@
 import './Home.css'
+import nashellPhoto from '../assets/nashell-photo.jpg'
 
 const Home = () => {
   return (
@@ -38,7 +39,7 @@ const Home = () => {
         </div>
 
         <div className="home__portrait">
-          <img src="/nashell-photo.jpg" alt="Nashell — Information Systems Graduate" />
+          <img src={nashellPhoto} alt="Nashell — Information Systems Graduate" />
         </div>
       </div>
     </section>
