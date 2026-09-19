@@ -127,3 +127,25 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 480px) {
+  .home__inner {
+    gap: 32px;
+  }
+  
+  .home__actions {
+    flex-direction: column;
+  }
+  
+  .home__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .home__status {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+  }
+}

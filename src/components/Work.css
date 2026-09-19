@@ -200,3 +200,18 @@
     gap: 32px;
   }
 }
+
+@media (max-width: 480px) {
+  .work__metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .work__project-actions {
+    flex-direction: column;
+  }
+  
+  .work__project-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

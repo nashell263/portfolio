@@ -183,3 +183,24 @@
     margin-left: 16px;
   }
 }
+
+@media (max-width: 480px) {
+  .career__degree {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .career__grade {
+    text-align: left;
+  }
+  
+  .career__cert {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .career__extra {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

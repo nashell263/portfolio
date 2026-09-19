@@ -63,7 +63,12 @@
 @media (max-width: 768px) {
   .contact__actions {
     flex-direction: column;
-    max-width: 280px;
+    max-width: 100%;
+  }
+
+  .contact__actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .footer__inner {
