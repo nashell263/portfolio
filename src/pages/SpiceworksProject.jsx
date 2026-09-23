@@ -122,8 +122,8 @@ const SpiceworksProject = () => {
           </div>
 
           <div className="sp-hero-actions">
-            <a href="#lifecycle" className="btn btn-primary">Explore Ticket Lifecycle ↓</a>
-            <a href="#evidence" className="btn btn-outline">View Evidence</a>
+            <button onClick={() => document.getElementById('lifecycle')?.scrollIntoView({behavior: 'smooth'})} className="btn btn-primary">Explore Ticket Lifecycle ↓</button>
+            <button onClick={() => document.getElementById('evidence')?.scrollIntoView({behavior: 'smooth'})} className="btn btn-outline">View Evidence</button>
           </div>
         </div>
       </section>
