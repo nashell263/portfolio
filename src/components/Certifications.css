@@ -1,0 +1,133 @@
+.certifications {
+  background: var(--bg);
+}
+
+.certs__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.cert__card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  align-items: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert__card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.cert__image-container {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cert__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.cert__card:hover .cert__image {
+  transform: scale(1.02);
+}
+
+.cert__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.cert__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cert__company-logo {
+  height: 28px;
+  width: auto;
+  opacity: 0.9;
+}
+
+.cert__date {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cert__title {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.cert__issuer {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.cert__details {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+}
+
+.cert__details p {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
+.cert__details strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.cert__btn {
+  align-self: flex-start;
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .cert__card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cert__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .cert__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

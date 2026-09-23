@@ -88,102 +88,6 @@
   letter-spacing: 0.3px;
 }
 
-/* Featured Project */
-.work__project-header {
-  margin-bottom: 20px;
-}
-
-.work__project-tag {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-  display: block;
-}
-
-.work__project-title {
-  font-size: clamp(32px, 4vw, 44px);
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-
-.work__project-subtitle {
-  font-size: 17px;
-  color: var(--text-secondary);
-}
-
-.work__project-desc {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 640px;
-  margin-bottom: 36px;
-}
-
-.work__project-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
-  margin-bottom: 36px;
-}
-
-.work__project-label {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 16px;
-  font-family: var(--font-body);
-}
-
-.work__tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.work__tech-item {
-  font-size: 13px;
-  color: var(--text-secondary);
-  padding: 6px 14px;
-  border: 1px solid var(--border-hover);
-  border-radius: 4px;
-  transition: border-color 0.2s ease;
-}
-
-.work__tech-item:hover {
-  border-color: var(--text-muted);
-}
-
-.work__built-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.work__built-list li {
-  font-size: 14px;
-  color: var(--text-secondary);
-  padding-left: 16px;
-  position: relative;
-}
-
-.work__built-list li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--text-muted);
-  font-size: 12px;
-}
-
-.work__project-actions {
-  display: flex;
-  gap: 12px;
-}
 
 @media (max-width: 768px) {
   .work__exp-header {
@@ -194,24 +98,10 @@
   .work__metrics {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .work__project-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
 }
 
 @media (max-width: 480px) {
   .work__metrics {
     grid-template-columns: 1fr;
-  }
-  
-  .work__project-actions {
-    flex-direction: column;
-  }
-  
-  .work__project-actions .btn {
-    width: 100%;
-    justify-content: center;
   }
 }

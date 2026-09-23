@@ -7,12 +7,6 @@ const metrics = [
   { value: '8+', label: 'Client Demonstrations' },
 ]
 
-const techStack = [
-  'React', 'JavaScript', 'Node.js', 'Python', 'REST APIs',
-  'MySQL', 'SQLite', 'JWT', 'bcrypt', 'Git/GitHub',
-]
-
-const built = ['Frontend', 'Backend', 'Database', 'Authentication & Security', 'API Integration']
 
 const Work = () => {
   return (
@@ -50,51 +44,6 @@ const Work = () => {
           </div>
         </div>
 
-        <div className="section-divider" />
-
-        {/* Featured Project */}
-        <div className="work__project reveal">
-          <div className="work__project-header">
-            <span className="work__project-tag">Featured Project</span>
-            <h2 className="work__project-title">EmoSense</h2>
-            <p className="work__project-subtitle">AI-Powered Emotion-Detection Counselling Platform</p>
-          </div>
-
-          <p className="work__project-desc">
-            EmoSense is my final-year project — an AI-powered counselling platform designed around emotion detection and digital user support.
-          </p>
-
-          <div className="work__project-grid">
-            <div>
-              <h4 className="work__project-label">Technologies</h4>
-              <div className="work__tech">
-                {techStack.map((t) => (
-                  <span key={t} className="work__tech-item">{t}</span>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 className="work__project-label">What I Built</h4>
-              <ul className="work__built-list">
-                {built.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="work__project-actions">
-            <a href="https://emosense-2.onrender.com" target="_blank" rel="noreferrer" className="btn btn-primary">
-              Live Project
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
-            <a href="https://github.com/nashell263/emosense" target="_blank" rel="noreferrer" className="btn btn-outline">
-              GitHub
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   )

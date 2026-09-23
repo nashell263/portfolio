@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import Certifications from './components/Certifications'
 import About from './components/About'
 import Work from './components/Work'
+import Projects from './components/Projects'
 import Career from './components/Career'
 import Contact from './components/Contact'
 import './App.css'
@@ -29,8 +31,10 @@ function App() {
       <Navbar />
       <main>
         <Home />
+        <Certifications />
         <About />
         <Work />
+        <Projects />
         <Career />
         <Contact />
       </main>
