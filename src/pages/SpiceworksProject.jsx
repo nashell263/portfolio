@@ -6,6 +6,9 @@ import sp2 from '../assets/sp2-create.png'
 import sp3 from '../assets/sp3-created.png'
 import sp4 from '../assets/sp4-request.png'
 import sp5 from '../assets/sp5-followup.png'
+import sp6 from '../assets/sp6-escalate-create.png'
+import sp7 from '../assets/sp7-escalate-comment.png'
+import sp8 from '../assets/sp8-escalate-assign.png'
 
 const SpiceworksProject = () => {
   const [lightboxImg, setLightboxImg] = useState(null)
@@ -203,29 +206,17 @@ const SpiceworksProject = () => {
             Escalation practice helped me understand the importance of recognizing when an issue requires additional expertise or intervention rather than attempting to resolve every issue at the initial support level.
           </p>
           <div className="sp-screenshot-group">
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: Identifying a support issue requiring escalation ]
-              </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp6)} style={{cursor: 'pointer'}}>
+              <img src={sp6} alt="Identifying a support issue requiring escalation" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
               <p className="sp-screenshot-caption">Identifying a support issue requiring escalation</p>
             </div>
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: Reviewing the ticket before escalation ]
-              </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp7)} style={{cursor: 'pointer'}}>
+              <img src={sp7} alt="Reviewing the ticket before escalation" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
               <p className="sp-screenshot-caption">Reviewing the ticket before escalation</p>
             </div>
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: Escalating the support issue ]
-              </div>
-              <p className="sp-screenshot-caption">Escalating the support issue</p>
-            </div>
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: Assigning the ticket to another team or user ]
-              </div>
-              <p className="sp-screenshot-caption">Assigning the ticket to another team or user</p>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp8)} style={{cursor: 'pointer'}}>
+              <img src={sp8} alt="Escalating and assigning the ticket to another team or user" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">Escalating and assigning the ticket to another team or user</p>
             </div>
           </div>
         </section>
