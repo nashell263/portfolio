@@ -1,10 +1,21 @@
+import { useState } from 'react'
 import './Certifications.css'
 import ciscoCert from '../assets/cisco-cert.jpg'
 import nfcCert from '../assets/nfc-cert.jpg'
 
 const Certifications = () => {
+  const [lightboxImg, setLightboxImg] = useState(null)
+
   return (
     <section id="certifications" className="section certifications">
+      {/* Lightbox */}
+      {lightboxImg && (
+        <div className="cert-lightbox" onClick={() => setLightboxImg(null)}>
+          <span className="cert-lightbox-close">&times;</span>
+          <img src={lightboxImg} alt="Enlarged Certificate" className="cert-lightbox-img" onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
+
       <div className="container">
         <h2 className="section-label reveal">QUALIFICATIONS</h2>
         <h3 className="section-title reveal">
@@ -13,7 +24,8 @@ const Certifications = () => {
 
         <div className="certs__grid reveal">
           <div className="cert__card">
-            <div className="cert__image-container">
+            <div className="cert__image-container" onClick={() => setLightboxImg(ciscoCert)} style={{cursor: 'pointer'}}>
+              <div className="cert__image-overlay">View Certificate</div>
               <img src={ciscoCert} alt="Introduction to Cybersecurity Certificate" className="cert__image" />
             </div>
             <div className="cert__content">
@@ -46,7 +58,8 @@ const Certifications = () => {
           </div>
 
           <div className="cert__card">
-            <div className="cert__image-container">
+            <div className="cert__image-container" onClick={() => setLightboxImg(nfcCert)} style={{cursor: 'pointer'}}>
+              <div className="cert__image-overlay">View Certificate</div>
               <img src={nfcCert} alt="National Foundation Certificate" className="cert__image" />
             </div>
             <div className="cert__content">
@@ -61,10 +74,6 @@ const Certifications = () => {
               <div className="cert__details">
                 <p><strong>Credential No:</strong> 147677</p>
               </div>
-
-              <span className="btn btn-outline cert__btn disabled" style={{opacity: 0.5, cursor: 'not-allowed'}}>
-                Verified
-              </span>
             </div>
           </div>
         </div>
