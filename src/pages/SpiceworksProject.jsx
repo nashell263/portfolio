@@ -9,6 +9,8 @@ import sp5 from '../assets/sp5-followup.png'
 import sp6 from '../assets/sp6-escalate-create.png'
 import sp7 from '../assets/sp7-escalate-comment.png'
 import sp8 from '../assets/sp8-escalate-assign.png'
+import sp9 from '../assets/sp9-user-confirms.png'
+import sp10 from '../assets/sp10-ticket-closed.png'
 
 const SpiceworksProject = () => {
   const [lightboxImg, setLightboxImg] = useState(null)
@@ -163,16 +165,12 @@ const SpiceworksProject = () => {
               <img src={sp5} alt="Following up with the user to verify resolution" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
               <p className="sp-screenshot-caption">Following up with the user to verify resolution</p>
             </div>
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: User confirms that the issue has been resolved ]
-              </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp9)} style={{cursor: 'pointer'}}>
+              <img src={sp9} alt="User confirms that the issue has been resolved" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
               <p className="sp-screenshot-caption">User confirms that the issue has been resolved</p>
             </div>
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: Ticket formally closed after resolution confirmation ]
-              </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp10)} style={{cursor: 'pointer'}}>
+              <img src={sp10} alt="Ticket formally closed after resolution confirmation" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
               <p className="sp-screenshot-caption">Ticket formally closed after resolution confirmation</p>
             </div>
           </div>
