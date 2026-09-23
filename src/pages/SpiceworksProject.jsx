@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './SpiceworksProject.css'
 
-// Import all images
 import sp1 from '../assets/sp1-env.png'
 import sp2 from '../assets/sp2-create.png'
 import sp3 from '../assets/sp3-created.png'
@@ -13,93 +12,30 @@ import sp8 from '../assets/sp8-escalate-assign.png'
 import sp9 from '../assets/sp9-user-confirms.png'
 import sp10 from '../assets/sp10-ticket-closed.png'
 
-const galleryData = [
-  { id: 1, src: sp1, title: 'OPEN SPICEWORKS', desc: 'Opening the Spiceworks service desk environment', cat: 'CREATION' },
-  { id: 2, src: sp2, title: 'CREATE TICKET', desc: 'Creating the first simulated user support ticket', cat: 'CREATION' },
-  { id: 3, src: sp3, title: 'TICKET CREATED', desc: 'Verifying that the support ticket has been successfully recorded', cat: 'CREATION' },
-  { id: 4, src: sp4, title: 'CREATE REQUEST', desc: 'Simulated support request created', cat: 'COMMUNICATION' },
-  { id: 5, src: sp5, title: 'RESPOND TO USER', desc: 'Following up with the user', cat: 'COMMUNICATION' },
-  { id: 6, src: sp9, title: 'USER CONFIRMS', desc: 'User confirms that the issue has been resolved', cat: 'RESOLUTION' },
-  { id: 7, src: sp10, title: 'CLOSE TICKET', desc: 'Ticket formally closed', cat: 'RESOLUTION' },
-  { id: 8, src: sp6, title: 'IDENTIFY ISSUE', desc: 'Identifying an issue requiring additional assistance', cat: 'ESCALATION' },
-  { id: 9, src: sp7, title: 'REVIEW ISSUE', desc: 'Reviewing the support request', cat: 'ESCALATION' },
-  { id: 10, src: sp8, title: 'ASSIGN & ESCALATE', desc: 'Escalating and assigning the ticket to another team', cat: 'ESCALATION' }
-]
-
-const lifecycleStages = [
-  { id: '01', title: 'INTAKE', desc: 'Received and recorded the simulated user support request within the Spiceworks service desk environment.' },
-  { id: '02', title: 'PRIORITIZE', desc: 'Assigned appropriate priority levels to tickets based on user impact and urgency.' },
-  { id: '03', title: 'INVESTIGATE', desc: 'Reviewed ticket details and identified the underlying technical issues required for resolution.' },
-  { id: '04', title: 'DOCUMENT', desc: 'Recorded troubleshooting actions and relevant support activity throughout the ticket lifecycle.' },
-  { id: '05', title: 'COMMUNICATE', desc: 'Maintained clear, professional communication with the user to provide updates and ask clarifying questions.' },
-  { id: '06', title: 'ESCALATE', desc: 'Recognized when an issue required additional assistance and practiced assigning the ticket to another team or user.' },
-  { id: '07', title: 'RESOLVE', desc: 'Applied fixes and verified with the user that the system was restored to working order.' },
-  { id: '08', title: 'CLOSE', desc: 'Confirmed resolution with the user, documented the outcome and formally closed the ticket.' }
-]
-
 const SpiceworksProject = () => {
-  const [activeStage, setActiveStage] = useState('01')
-  const [expandedCase, setExpandedCase] = useState(null)
-  
-  // Case Study Inner Navigation
-  const [case1Step, setCase1Step] = useState(0)
-  const [case2Step, setCase2Step] = useState(0)
-  const [case3Step, setCase3Step] = useState(0)
-  
-  const [learnExpanded, setLearnExpanded] = useState(false)
-  const [activeTab, setActiveTab] = useState('ALL')
-  
-  // Lightbox
-  const [lightboxIndex, setLightboxIndex] = useState(null)
-  const [lightboxArray, setLightboxArray] = useState([])
+  const [lightboxImg, setLightboxImg] = useState(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  const openLightbox = (array, index) => {
-    setLightboxArray(array)
-    setLightboxIndex(index)
-  }
-
-  const nextLightbox = (e) => {
-    e.stopPropagation()
-    setLightboxIndex((prev) => (prev + 1) % lightboxArray.length)
-  }
-
-  const prevLightbox = (e) => {
-    e.stopPropagation()
-    setLightboxIndex((prev) => (prev - 1 + lightboxArray.length) % lightboxArray.length)
-  }
-
-  const filteredGallery = activeTab === 'ALL' 
-    ? galleryData 
-    : galleryData.filter(item => item.cat === activeTab)
-
-  const case1Data = [galleryData[0], galleryData[1], galleryData[2]]
-  const case2Data = [galleryData[3], galleryData[4], galleryData[5], galleryData[6]]
-  const case3Data = [galleryData[7], galleryData[8], galleryData[9], galleryData[9]] // Using sp8 twice as requested for escalate/assign
-
   return (
     <div className="spiceworks-page">
-      {/* LIGHTBOX */}
-      {lightboxIndex !== null && lightboxArray.length > 0 && (
-        <div className="sp-lightbox" onClick={() => setLightboxIndex(null)}>
+      {/* Lightbox */}
+      {lightboxImg && (
+        <div className="sp-lightbox" onClick={() => setLightboxImg(null)}>
           <span className="sp-lightbox-close">&times;</span>
-          <span className="sp-lightbox-nav sp-lightbox-prev" onClick={prevLightbox}>‹</span>
-          <img src={lightboxArray[lightboxIndex].src} alt={lightboxArray[lightboxIndex].title} className="sp-lightbox-img" onClick={(e) => e.stopPropagation()} />
-          <p className="sp-lightbox-caption">{lightboxArray[lightboxIndex].desc}</p>
-          <span className="sp-lightbox-nav sp-lightbox-next" onClick={nextLightbox}>›</span>
+          <img src={lightboxImg} alt="Enlarged screenshot" className="sp-lightbox-img" />
         </div>
       )}
 
-      {/* 1. HERO */}
+      {/* 1. HERO SECTION */}
       <section className="spiceworks-hero">
         <div className="container">
-          <h1 className="sp-hero-title">SPICEWORKS<br/><span style={{fontSize: 'clamp(24px, 3vw, 40px)', color: 'var(--text-secondary)'}}>IT SERVICE DESK SIMULATION</span></h1>
+          <h1 className="sp-hero-title">Spiceworks — IT Service Desk Simulation</h1>
           <h2 className="sp-hero-subtitle">Practical IT Support & Service Desk Workflow Simulation</h2>
           <p className="sp-hero-intro">
-            Hands-on simulation of the complete IT support ticket lifecycle using a Spiceworks environment — from user issue intake and prioritization to documentation, communication, escalation, resolution and formal closure.
+            This project demonstrates my practical understanding of the operational realities of IT and security support through hands-on use of a Spiceworks ticketing environment.
           </p>
           
           <div className="sp-metadata">
@@ -109,7 +45,7 @@ const SpiceworksProject = () => {
             </div>
             <div className="sp-meta-item">
               <span className="sp-meta-label">Category</span>
-              <span className="sp-meta-value">IT Support / ITSM</span>
+              <span className="sp-meta-value">IT Support / IT Service Management</span>
             </div>
             <div className="sp-meta-item">
               <span className="sp-meta-label">Project Type</span>
@@ -120,333 +56,209 @@ const SpiceworksProject = () => {
               <span className="sp-meta-value">Completed</span>
             </div>
           </div>
-
-          <div className="sp-hero-actions">
-            <button onClick={() => document.getElementById('lifecycle')?.scrollIntoView({behavior: 'smooth'})} className="btn btn-primary">Explore Ticket Lifecycle ↓</button>
-            <button onClick={() => document.getElementById('evidence')?.scrollIntoView({behavior: 'smooth'})} className="btn btn-outline">View Evidence</button>
-          </div>
         </div>
       </section>
 
       <div className="container">
-        {/* 2. PROJECT SNAPSHOT */}
-        <section className="sp-section" style={{paddingTop: '60px'}}>
-          <div className="sp-snapshot-grid">
-            <div className="sp-snap-card">
-              <div className="sp-snap-num">01</div>
-              <h4>Ticket Lifecycle</h4>
-              <p>Managed simulated tickets from intake to closure.</p>
-            </div>
-            <div className="sp-snap-card">
-              <div className="sp-snap-num">02</div>
-              <h4>User Support</h4>
-              <p>Practiced communication and resolution confirmation.</p>
-            </div>
-            <div className="sp-snap-card">
-              <div className="sp-snap-num">03</div>
-              <h4>Escalation</h4>
-              <p>Simulated routing issues to another team/user.</p>
-            </div>
-            <div className="sp-snap-card">
-              <div className="sp-snap-num">04</div>
-              <h4>Documentation</h4>
-              <p>Recorded support actions and resolution details.</p>
-            </div>
-            <div className="sp-snap-card">
-              <div className="sp-snap-num">05</div>
-              <h4>ITSM</h4>
-              <p>Applied structured service desk workflows.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. INTERACTIVE TICKET CARD */}
+        {/* 2. PROJECT OVERVIEW */}
         <section className="sp-section">
-          <div className="sp-ticket-mock">
-            <div className="sp-ticket-header">
-              <span className="sp-ticket-id">TICKET #001</span>
-              <span className="sp-ticket-status-badge">RESOLVED</span>
-            </div>
-            <div className="sp-ticket-body">
-              <div className="sp-ticket-field">
-                <div className="sp-ticket-label">Issue</div>
-                <div className="sp-ticket-value">User unable to connect to network</div>
-              </div>
-              <div className="sp-ticket-field" style={{display: 'flex', gap: '40px'}}>
-                <div>
-                  <div className="sp-ticket-label">Priority</div>
-                  <div className="sp-ticket-value" style={{color: '#ef4444'}}>HIGH</div>
-                </div>
-                <div>
-                  <div className="sp-ticket-label">Assigned</div>
-                  <div className="sp-ticket-value">IT Support</div>
-                </div>
-              </div>
-            </div>
-            <div className="sp-ticket-timeline">
-              <span>Timeline:</span>
-              <span className="sp-ticket-step">OPEN</span> → 
-              <span className="sp-ticket-step">IN PROGRESS</span> → 
-              <span className="sp-ticket-step active">RESOLVED</span> → 
-              <span className="sp-ticket-step">CLOSED</span>
-            </div>
-          </div>
-        </section>
-
-        {/* 4. INTERACTIVE TICKET LIFECYCLE */}
-        <section id="lifecycle" className="sp-section">
-          <div className="sp-section-header">
-            <h3 className="sp-section-title">Managing the Full Ticket Lifecycle</h3>
-          </div>
-          <div className="sp-lifecycle-container">
-            <div className="sp-lifecycle-nav">
-              {lifecycleStages.map(stage => (
-                <button 
-                  key={stage.id} 
-                  className={`sp-lifecycle-btn ${activeStage === stage.id ? 'active' : ''}`}
-                  onClick={() => setActiveStage(stage.id)}
-                >
-                  <span>{stage.id} — {stage.title}</span>
-                </button>
-              ))}
-            </div>
-            <div className="sp-lifecycle-content">
-              {lifecycleStages.filter(s => s.id === activeStage).map(stage => (
-                <div key={stage.id}>
-                  <h4>{stage.title}</h4>
-                  <p>{stage.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 5, 6, 7, 8. THREE INTERACTIVE CASE STUDIES */}
-        <section className="sp-section">
-          <div className="sp-cases-grid">
-            
-            {/* CASE 01 */}
-            <div className="sp-case-card">
-              <div className="sp-case-header" onClick={() => setExpandedCase(expandedCase === 1 ? null : 1)}>
-                <div className="sp-case-header-info">
-                  <h4>Ticket Creation & Intake</h4>
-                  <p>From opening the Spiceworks environment to creating and recording a support ticket.</p>
-                </div>
-                <button className="btn btn-outline">{expandedCase === 1 ? 'Close Case ↑' : 'Explore Case →'}</button>
-              </div>
-              {expandedCase === 1 && (
-                <div className="sp-case-body">
-                  <div className="sp-showcase">
-                    <div className="sp-showcase-nav">
-                      {['01 OPEN SPICEWORKS', '02 CREATE TICKET', '03 TICKET CREATED'].map((tab, idx) => (
-                        <button key={idx} className={`sp-showcase-tab ${activeCase1Step === idx ? 'active' : ''}`} onClick={() => setCase1Step(idx)}>
-                          {tab}
-                        </button>
-                      ))}
-                    </div>
-                    <div className="sp-showcase-view" onClick={() => openLightbox(case1Data, activeCase1Step)}>
-                      <img src={case1Data[activeCase1Step].src} alt={case1Data[activeCase1Step].title} className="sp-showcase-img" />
-                      <p className="sp-showcase-caption">{case1Data[activeCase1Step].desc}</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* CASE 02 */}
-            <div className="sp-case-card">
-              <div className="sp-case-header" onClick={() => setExpandedCase(expandedCase === 2 ? null : 2)}>
-                <div className="sp-case-header-info">
-                  <h4>User Communication, Resolution & Closure</h4>
-                  <p>Following up with the user, confirming resolution and formally closing the ticket.</p>
-                </div>
-                <button className="btn btn-outline">{expandedCase === 2 ? 'Close Case ↑' : 'Explore Case →'}</button>
-              </div>
-              {expandedCase === 2 && (
-                <div className="sp-case-body">
-                  <p style={{color: 'var(--text-secondary)', marginBottom: '24px', fontSize: '14px'}}>
-                    I practiced confirming resolution with the user before formally closing the ticket, reinforcing the importance of communication and accurate support records.
-                  </p>
-                  <div className="sp-showcase">
-                    <div className="sp-showcase-nav">
-                      {['CREATE', 'RESPOND', 'CONFIRM', 'CLOSE'].map((tab, idx) => (
-                        <button key={idx} className={`sp-showcase-tab ${activeCase2Step === idx ? 'active' : ''}`} onClick={() => setCase2Step(idx)}>
-                          {tab}
-                        </button>
-                      ))}
-                    </div>
-                    <div className="sp-showcase-view" onClick={() => openLightbox(case2Data, activeCase2Step)}>
-                      <img src={case2Data[activeCase2Step].src} alt={case2Data[activeCase2Step].title} className="sp-showcase-img" />
-                      <p className="sp-showcase-caption">{case2Data[activeCase2Step].desc}</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* CASE 03 */}
-            <div className="sp-case-card">
-              <div className="sp-case-header" onClick={() => setExpandedCase(expandedCase === 3 ? null : 3)}>
-                <div className="sp-case-header-info">
-                  <h4>Escalation & Assignment</h4>
-                  <p>Identifying an issue requiring further assistance and routing it to another team or user.</p>
-                </div>
-                <button className="btn btn-outline">{expandedCase === 3 ? 'Close Case ↑' : 'Explore Case →'}</button>
-              </div>
-              {expandedCase === 3 && (
-                <div className="sp-case-body">
-                  <p style={{color: 'var(--text-secondary)', marginBottom: '24px', fontSize: '14px'}}>
-                    Escalation practice demonstrated the importance of recognizing when an issue should be routed to another support level rather than handled indefinitely at the initial support level.
-                  </p>
-                  <div className="sp-showcase">
-                    <div className="sp-showcase-nav">
-                      {['IDENTIFY', 'REVIEW', 'ESCALATE', 'ASSIGN'].map((tab, idx) => (
-                        <button key={idx} className={`sp-showcase-tab ${activeCase3Step === idx ? 'active' : ''}`} onClick={() => setCase3Step(idx)}>
-                          {tab}
-                        </button>
-                      ))}
-                    </div>
-                    <div className="sp-showcase-view" onClick={() => openLightbox(case3Data, activeCase3Step)}>
-                      <img src={case3Data[activeCase3Step].src} alt={case3Data[activeCase3Step].title} className="sp-showcase-img" />
-                      <p className="sp-showcase-caption">{case3Data[activeCase3Step].desc}</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-          </div>
-        </section>
-
-        {/* 9. TICKET CLOSURE CHECKLIST */}
-        <section className="sp-section">
-          <div className="sp-section-header">
-            <h3 className="sp-section-title">Ticket Closure Checklist</h3>
-          </div>
-          <div className="sp-checklist reveal">
-            <p style={{color: 'var(--text-secondary)', marginBottom: '16px'}}>Before closing a ticket, I practiced verifying that the issue had been addressed, documenting the relevant actions and confirming the outcome with the user.</p>
-            {['Issue investigated', 'Troubleshooting documented', 'User contacted', 'Resolution confirmed', 'Resolution notes recorded', 'Ticket status updated', 'Ticket formally closed'].map(item => (
-              <div key={item} className="sp-checklist-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                {item}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 10. WHAT THIS PROJECT DEMONSTRATES */}
-        <section className="sp-section">
-          <div className="sp-section-header">
-            <h3 className="sp-section-title">What This Project Demonstrates</h3>
-          </div>
-          <div className="sp-snapshot-grid">
-            <div className="sp-snap-card">
-              <h4>STRUCTURED PROCESS</h4>
-              <p>Following a defined workflow from ticket intake through resolution.</p>
-            </div>
-            <div className="sp-snap-card">
-              <h4>TASK MANAGEMENT</h4>
-              <p>Managing different support requests and maintaining their status.</p>
-            </div>
-            <div className="sp-snap-card">
-              <h4>DOCUMENTATION</h4>
-              <p>Recording troubleshooting actions, communication and resolution details.</p>
-            </div>
-            <div className="sp-snap-card">
-              <h4>USER COMMUNICATION</h4>
-              <p>Communicating clearly with users and confirming issue resolution.</p>
-            </div>
-            <div className="sp-snap-card">
-              <h4>ESCALATION</h4>
-              <p>Recognizing when additional support is required and routing the issue appropriately.</p>
-            </div>
-            <div className="sp-snap-card">
-              <h4>IT SERVICE MANAGEMENT</h4>
-              <p>Understanding the operational workflow behind structured IT support.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* 11. WHAT I LEARNED */}
-        <section className="sp-section">
-          <div className="sp-learn-accordion">
-            <div className="sp-learn-header" onClick={() => setLearnExpanded(!learnExpanded)}>
-              <span>What I Learned</span>
-              <span style={{color: 'var(--text-muted)'}}>{learnExpanded ? '−' : '+'}</span>
-            </div>
-            {!learnExpanded && (
-              <div style={{padding: '0 24px 24px', color: 'var(--text-secondary)'}}>
-                Effective IT Support is more than solving the technical problem.
-              </div>
-            )}
-            {learnExpanded && (
-              <div className="sp-learn-body">
-                <p>This project reinforced that effective IT Support is not only about solving technical problems. It also involves managing the process surrounding each issue.</p>
-                <p>A properly managed ticket provides a clear record of what was reported, what actions were taken, how the user was supported, whether escalation was required and how the issue was ultimately resolved.</p>
-                <p>Through this simulation, I gained practical exposure to structured IT support workflows, ticket management, documentation, prioritization, user communication, escalation and resolution management.</p>
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* 12. PROJECT EVIDENCE */}
-        <section id="evidence" className="sp-section">
-          <div className="sp-section-header">
-            <h3 className="sp-section-title">Project Evidence</h3>
-          </div>
-          
-          <div className="sp-gallery-tabs">
-            {['ALL', 'CREATION', 'COMMUNICATION', 'RESOLUTION', 'ESCALATION'].map(tab => (
-              <button 
-                key={tab} 
-                className={`sp-gallery-tab ${activeTab === tab ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab === 'ALL' ? '[ ALL ]' : `[ TICKET ${tab} ]`}
-              </button>
-            ))}
-          </div>
-
-          <div className="sp-gallery-grid">
-            {filteredGallery.map((item, idx) => (
-              <div key={item.id} className="sp-gallery-item" onClick={() => openLightbox(filteredGallery, idx)}>
-                <img src={item.src} alt={item.title} />
-                <p>{item.title}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 13. QUICK SKILLS */}
-        <section className="sp-section">
-          <div className="sp-section-header">
-            <h3 className="sp-section-title">Skills Demonstrated</h3>
-          </div>
-          <div className="sp-skills-tags">
-            {['Spiceworks', 'IT Support', 'ITSM', 'Ticket Management', 'Incident Management', 'Prioritization', 'Documentation', 'User Communication', 'Escalation', 'Troubleshooting', 'Resolution Management', 'Ticket Closure'].map(tag => (
-              <span key={tag} className="sp-skill-tag">{tag}</span>
-            ))}
-          </div>
-        </section>
-
-        {/* 14. FINAL SUMMARY */}
-        <section className="sp-section" style={{textAlign: 'center'}}>
-          <h3 className="sp-section-title" style={{marginBottom: '40px'}}>From Issue → Resolution</h3>
-          
-          <div className="sp-final-flow">
-            {['INTAKE', 'PRIORITIZE', 'INVESTIGATE', 'DOCUMENT', 'COMMUNICATE', 'ESCALATE', 'RESOLVE', 'CLOSE'].map((step, idx, arr) => (
-              <div key={step} style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
-                <span className="sp-final-node">{step}</span>
-                {idx < arr.length - 1 && <span style={{color: 'var(--accent)'}}>→</span>}
-              </div>
-            ))}
-          </div>
-
-          <p style={{color: 'var(--text-secondary)', maxWidth: '700px', margin: '40px auto 60px', lineHeight: 1.8}}>
-            Through this Spiceworks IT Service Desk Simulation, I demonstrated practical understanding of ticket-based IT support workflows and the structured processes used to manage user issues efficiently.
+          <h3 className="sp-section-title">Project Overview</h3>
+          <p className="sp-text">
+            I deployed a Spiceworks environment and practiced managing the full lifecycle of simulated user support tickets. The project focused on understanding how an IT Service Desk receives, tracks, manages, documents, escalates and resolves user issues efficiently.
           </p>
+          <p className="sp-text">
+            I practiced the complete ticket lifecycle, including ticket intake, setting priorities, documenting troubleshooting steps, communicating with users, confirming resolution, escalating issues when necessary and formally closing tickets.
+          </p>
+          <p className="sp-text">
+            The project was designed to demonstrate that I can work within a structured IT Support process, manage different tasks, maintain clear documentation and communicate effectively throughout the support lifecycle.
+          </p>
+          <div className="sp-overview-tags">
+            {['Ticket Intake', 'Prioritization', 'Documentation', 'User Communication', 'Escalation', 'Resolution', 'Ticket Closure'].map(tag => (
+              <span key={tag} className="sp-tag">{tag}</span>
+            ))}
+          </div>
+        </section>
 
-          <a href="#projects" className="btn btn-outline" style={{padding: '14px 32px'}}>
+        {/* 3. WHAT THIS PROJECT DEMONSTRATES */}
+        <section className="sp-section">
+          <h3 className="sp-section-title">What This Project Demonstrates</h3>
+          <div className="sp-demonstrates-grid">
+            <div className="sp-demo-card">
+              <h4>Structured Process</h4>
+              <p>Following a defined workflow from ticket intake through resolution and closure.</p>
+            </div>
+            <div className="sp-demo-card">
+              <h4>Task Management</h4>
+              <p>Managing different simulated support requests and maintaining their status throughout the ticket lifecycle.</p>
+            </div>
+            <div className="sp-demo-card">
+              <h4>Clear Documentation</h4>
+              <p>Recording troubleshooting actions, communication and resolution details clearly.</p>
+            </div>
+            <div className="sp-demo-card">
+              <h4>User Communication</h4>
+              <p>Communicating with users and confirming whether reported issues have been resolved.</p>
+            </div>
+            <div className="sp-demo-card">
+              <h4>Escalation</h4>
+              <p>Recognizing when an issue requires additional support and assigning it to the appropriate team or user.</p>
+            </div>
+            <div className="sp-demo-card">
+              <h4>IT Service Management</h4>
+              <p>Understanding how ticketing systems support the organization, tracking and resolution of IT issues.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. FULL TICKET LIFECYCLE */}
+        <section className="sp-section">
+          <h3 className="sp-section-title">Managing the Full Ticket Lifecycle</h3>
+          <p className="sp-text">
+            I practiced managing support requests from the moment an issue was received until the ticket was resolved and formally closed. This helped me understand the importance of maintaining a structured process and an accurate record throughout an IT support interaction.
+          </p>
+          <div className="sp-timeline">
+            {['01 — Intake', '02 — Prioritize', '03 — Investigate', '04 — Document', '05 — Communicate', '06 — Escalate if Required', '07 — Confirm Resolution', '08 — Close Ticket'].map((step, idx, arr) => (
+              <div key={step}>
+                <div className="sp-timeline-item">{step}</div>
+                {idx < arr.length - 1 && <div className="sp-timeline-arrow">↓</div>}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="section-divider" style={{margin: '40px 0'}} />
+
+        {/* CASE STUDY 01 */}
+        <section className="sp-section sp-case-part">
+          <h3 className="sp-case-title">01 — Ticket Intake & Creation</h3>
+          <p className="sp-text">
+            I began by opening the Spiceworks service desk environment and simulating the intake of a user support request. I then created a support ticket and verified that the ticket was successfully recorded in the system.
+          </p>
+          <div className="sp-screenshot-group">
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp1)} style={{cursor: 'pointer'}}>
+              <img src={sp1} alt="Opening the Spiceworks service desk environment" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">Opening the Spiceworks service desk environment</p>
+            </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp2)} style={{cursor: 'pointer'}}>
+              <img src={sp2} alt="Creating the first simulated support ticket" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">Creating the first simulated support ticket</p>
+            </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp3)} style={{cursor: 'pointer'}}>
+              <img src={sp3} alt="Support ticket successfully created" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">Support ticket successfully created</p>
+            </div>
+          </div>
+        </section>
+
+        {/* CASE STUDY 02 */}
+        <section className="sp-section sp-case-part">
+          <h3 className="sp-case-title">02 — User Communication, Resolution & Closure</h3>
+          <p className="sp-text">
+            After working through the simulated support issue, I practiced communicating with the user to confirm whether the problem had been resolved. The ticket was only formally closed after the user confirmed that the issue was fixed.
+          </p>
+          <div className="sp-screenshot-group">
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp4)} style={{cursor: 'pointer'}}>
+              <img src={sp4} alt="Creating a simulated user support request" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">Creating a simulated user support request</p>
+            </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp5)} style={{cursor: 'pointer'}}>
+              <img src={sp5} alt="Following up with the user to verify resolution" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">Following up with the user to verify resolution</p>
+            </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp9)} style={{cursor: 'pointer'}}>
+              <img src={sp9} alt="User confirms that the issue has been resolved" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">User confirms that the issue has been resolved</p>
+            </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp10)} style={{cursor: 'pointer'}}>
+              <img src={sp10} alt="Ticket formally closed after resolution confirmation" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">Ticket formally closed after resolution confirmation</p>
+            </div>
+          </div>
+        </section>
+
+        {/* TICKET CLOSURE CHECKLIST */}
+        <section className="sp-section sp-case-part">
+          <h3 className="sp-case-title">Ticket Closure Checklist</h3>
+          <p className="sp-text">
+            Before closing a ticket, I practiced verifying that the reported issue had been addressed, documenting the relevant actions and confirming the outcome with the user.
+          </p>
+          <div className="sp-checklist">
+            <ul>
+              {['Issue investigated', 'Troubleshooting steps documented', 'User contacted', 'Resolution confirmed', 'Resolution notes recorded', 'Ticket status updated', 'Ticket formally closed'].map(item => (
+                <li key={item}>
+                  <svg className="sp-checklist-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M20 6L9 17l-5-5"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* CASE STUDY 03 */}
+        <section className="sp-section sp-case-part">
+          <h3 className="sp-case-title">03 — Escalation & Assignment</h3>
+          <p className="sp-text">
+            Not every support issue can be resolved at the initial support level. I therefore simulated an incident that required escalation and practiced assigning the ticket to another team or user for further investigation.
+          </p>
+          <p className="sp-text" style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>
+            Escalation practice helped me understand the importance of recognizing when an issue requires additional expertise or intervention rather than attempting to resolve every issue at the initial support level.
+          </p>
+          <div className="sp-screenshot-group">
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp6)} style={{cursor: 'pointer'}}>
+              <img src={sp6} alt="Identifying a support issue requiring escalation" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">Identifying a support issue requiring escalation</p>
+            </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp7)} style={{cursor: 'pointer'}}>
+              <img src={sp7} alt="Reviewing the ticket before escalation" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">Reviewing the ticket before escalation</p>
+            </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp8)} style={{cursor: 'pointer'}}>
+              <img src={sp8} alt="Escalating and assigning the ticket to another team or user" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
+              <p className="sp-screenshot-caption">Escalating and assigning the ticket to another team or user</p>
+            </div>
+          </div>
+        </section>
+
+        <div className="section-divider" style={{margin: '40px 0'}} />
+
+        {/* SKILLS */}
+        <section className="sp-section">
+          <h3 className="sp-section-title">Skills Demonstrated</h3>
+          <div className="sp-overview-tags">
+            {['IT Support', 'IT Service Management', 'Ticket Management', 'Incident Management', 'Ticket Prioritization', 'Troubleshooting Documentation', 'User Communication', 'Incident Escalation', 'Ticket Assignment', 'Resolution Verification', 'Ticket Closure', 'Structured Problem Solving'].map(tag => (
+              <span key={tag} className="sp-tag">{tag}</span>
+            ))}
+          </div>
+        </section>
+
+        {/* WHAT I LEARNED */}
+        <section className="sp-section">
+          <h3 className="sp-section-title">What I Learned</h3>
+          <p className="sp-text">
+            This project reinforced that effective IT Support is not only about solving technical problems. It also involves managing the process surrounding each issue.
+          </p>
+          <p className="sp-text">
+            A properly managed ticket provides a clear record of what was reported, what actions were taken, how the user was supported, whether escalation was required and how the issue was ultimately resolved.
+          </p>
+          <p className="sp-text">
+            Through this simulation, I gained practical exposure to structured IT support workflows, ticket management, documentation, prioritization, user communication, escalation and resolution management.
+          </p>
+        </section>
+
+        {/* FINAL PROJECT SUMMARY */}
+        <section className="sp-section" style={{ background: 'var(--bg-surface)', padding: '40px', borderRadius: '12px' }}>
+          <h3 className="sp-section-title" style={{ marginBottom: '16px' }}>Project Summary</h3>
+          <p className="sp-text" style={{ marginBottom: '16px' }}>
+            Through this Spiceworks IT Service Desk Simulation, I demonstrated practical understanding of ticket-based IT support workflows, including ticket intake, prioritization, documentation, user communication, escalation, resolution verification and formal ticket closure.
+          </p>
+          <p className="sp-text" style={{ marginBottom: 0 }}>
+            The project demonstrates my ability to work within a structured process, manage multiple support tasks, document technical activity clearly and communicate effectively throughout the support lifecycle.
+          </p>
+        </section>
+
+        {/* BACK TO PROJECTS */}
+        <section className="sp-footer">
+          <a href="#projects" className="btn btn-outline" style={{ fontSize: '16px', padding: '14px 32px' }}>
             ← Back to Projects
           </a>
         </section>
