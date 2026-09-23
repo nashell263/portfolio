@@ -21,7 +21,7 @@ const Home = () => {
           </div>
 
           <div className="home__actions">
-            <a href="#work" className="btn btn-primary">View My Work</a>
+            <a href="#projects" className="btn btn-primary">View My Work</a>
             <a href="/cv.pdf" download className="btn btn-outline">Download CV</a>
           </div>
 

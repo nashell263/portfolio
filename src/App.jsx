@@ -32,9 +32,9 @@ function App() {
       <main>
         <Home />
         <Certifications />
+        <Career />
         <Work />
         <Projects />
-        <Career />
         <About />
         <Contact />
       </main>

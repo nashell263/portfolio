@@ -1,5 +1,6 @@
 import './Certifications.css'
 import ciscoCert from '../assets/cisco-cert.jpg'
+import nfcCert from '../assets/nfc-cert.jpg'
 
 const Certifications = () => {
   return (
@@ -41,6 +42,29 @@ const Certifications = () => {
                 Verify Credential
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
               </a>
+            </div>
+          </div>
+
+          <div className="cert__card">
+            <div className="cert__image-container">
+              <img src={nfcCert} alt="National Foundation Certificate" className="cert__image" />
+            </div>
+            <div className="cert__content">
+              <div className="cert__header">
+                <h4 style={{ fontSize: '16px', fontWeight: '800', margin: 0, opacity: 0.9 }}>HEXCO Zimbabwe</h4>
+                <span className="cert__date">Issued Dec 2019</span>
+              </div>
+              
+              <h4 className="cert__title">National Foundation Certificate</h4>
+              <p className="cert__issuer">Computer Operations and Packages</p>
+              
+              <div className="cert__details">
+                <p><strong>Credential No:</strong> 147677</p>
+              </div>
+
+              <span className="btn btn-outline cert__btn disabled" style={{opacity: 0.5, cursor: 'not-allowed'}}>
+                Verified
+              </span>
             </div>
           </div>
         </div>
