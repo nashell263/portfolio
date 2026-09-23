@@ -1,13 +1,29 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './SpiceworksProject.css'
 
+import sp1 from '../assets/sp1-env.png'
+import sp2 from '../assets/sp2-create.png'
+import sp3 from '../assets/sp3-created.png'
+import sp4 from '../assets/sp4-request.png'
+import sp5 from '../assets/sp5-followup.png'
+
 const SpiceworksProject = () => {
+  const [lightboxImg, setLightboxImg] = useState(null)
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
   return (
     <div className="spiceworks-page">
+      {/* Lightbox */}
+      {lightboxImg && (
+        <div className="sp-lightbox" onClick={() => setLightboxImg(null)}>
+          <span className="sp-lightbox-close">&times;</span>
+          <img src={lightboxImg} alt="Enlarged screenshot" className="sp-lightbox-img" />
+        </div>
+      )}
+
       {/* 1. HERO SECTION */}
       <section className="spiceworks-hero">
         <div className="container">
@@ -114,22 +130,16 @@ const SpiceworksProject = () => {
             I began by opening the Spiceworks service desk environment and simulating the intake of a user support request. I then created a support ticket and verified that the ticket was successfully recorded in the system.
           </p>
           <div className="sp-screenshot-group">
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: Opening the Spiceworks service desk environment ]
-              </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp1)} style={{cursor: 'pointer'}}>
+              <img src={sp1} alt="Opening the Spiceworks service desk environment" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
               <p className="sp-screenshot-caption">Opening the Spiceworks service desk environment</p>
             </div>
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: Creating the first simulated support ticket ]
-              </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp2)} style={{cursor: 'pointer'}}>
+              <img src={sp2} alt="Creating the first simulated support ticket" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
               <p className="sp-screenshot-caption">Creating the first simulated support ticket</p>
             </div>
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: Support ticket successfully created ]
-              </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp3)} style={{cursor: 'pointer'}}>
+              <img src={sp3} alt="Support ticket successfully created" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
               <p className="sp-screenshot-caption">Support ticket successfully created</p>
             </div>
           </div>
@@ -142,16 +152,12 @@ const SpiceworksProject = () => {
             After working through the simulated support issue, I practiced communicating with the user to confirm whether the problem had been resolved. The ticket was only formally closed after the user confirmed that the issue was fixed.
           </p>
           <div className="sp-screenshot-group">
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: Creating a simulated user support request ]
-              </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp4)} style={{cursor: 'pointer'}}>
+              <img src={sp4} alt="Creating a simulated user support request" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
               <p className="sp-screenshot-caption">Creating a simulated user support request</p>
             </div>
-            <div className="sp-screenshot-item">
-              <div className="sp-screenshot-placeholder">
-                [ Screenshot: Following up with the user to verify resolution ]
-              </div>
+            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp5)} style={{cursor: 'pointer'}}>
+              <img src={sp5} alt="Following up with the user to verify resolution" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
               <p className="sp-screenshot-caption">Following up with the user to verify resolution</p>
             </div>
             <div className="sp-screenshot-item">
