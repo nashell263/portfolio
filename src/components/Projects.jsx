@@ -14,11 +14,11 @@ const projectsData = [
   // Placeholders for future projects
   {
     id: 2,
-    title: 'Future Project II',
-    subtitle: 'Software Engineering / IT Infrastructure',
-    description: 'A dedicated space for my upcoming software engineering or IT infrastructure project. Currently in the planning phase.',
-    tech: ['Technology 1', 'Technology 2', 'Technology 3'],
-    liveUrl: '#',
+    title: 'Spiceworks — IT Service Desk Simulation',
+    subtitle: 'IT Support / IT Service Management',
+    description: 'A practical IT Service Desk simulation using Spiceworks to manage the full lifecycle of simulated user support tickets — from intake and prioritization to documentation, communication, escalation, resolution and formal closure.',
+    tech: ['Spiceworks', 'IT Support', 'ITSM', 'Ticket Management', 'Incident Management'],
+    liveUrl: '#/projects/spiceworks',
     githubUrl: '#',
     featured: false
   },
@@ -61,9 +61,13 @@ const Projects = () => {
               
               <div className="project__actions">
                 {project.liveUrl !== '#' ? (
-                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
-                    Live Demo
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                  <a href={project.liveUrl} target={project.liveUrl.startsWith('#') ? '_self' : '_blank'} rel="noreferrer" className="btn btn-primary">
+                    {project.liveUrl.startsWith('#/') ? 'View Case Study →' : (
+                      <>
+                        Live Demo
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                      </>
+                    )}
                   </a>
                 ) : (
                   <span className="btn btn-outline disabled" style={{opacity: 0.5, cursor: 'not-allowed'}}>Coming Soon</span>
