@@ -21,6 +21,13 @@ const SpiceworksProject = () => {
 
   return (
     <div className="spiceworks-page">
+      {/* Top Nav */}
+      <div style={{ position: 'sticky', top: 0, left: 0, right: 0, padding: '20px 40px', background: 'rgba(5, 11, 24, 0.95)', backdropFilter: 'blur(10px)', zIndex: 100, borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'flex-start' }}>
+        <a href="#home" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px' }}>
+          ← Back to Home
+        </a>
+      </div>
+
       {/* Lightbox */}
       {lightboxImg && (
         <div className="sp-lightbox" onClick={() => setLightboxImg(null)}>
@@ -258,8 +265,8 @@ const SpiceworksProject = () => {
 
         {/* BACK TO PROJECTS */}
         <section className="sp-footer">
-          <a href="#projects" className="btn btn-outline" style={{ fontSize: '16px', padding: '14px 32px' }}>
-            ← Back to Projects
+          <a href="#home" className="btn btn-outline" style={{ fontSize: '16px', padding: '14px 32px' }}>
+            ← Back to Home
           </a>
         </section>
       </div>
