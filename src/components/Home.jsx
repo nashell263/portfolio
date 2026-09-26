@@ -8,10 +8,10 @@ const Home = () => {
         <div className="home__content">
           <p className="home__greeting">Information Systems Graduate</p>
           <h1 className="home__title">
-            Building Practical Technology Solutions.
+            Building Practical<br />Technology Solutions.
           </h1>
           <p className="home__description">
-            Information Systems graduate focused on software development, IT support, service management and practical technology solutions.
+            BCom Honours graduate specializing in software development, IT support, and service management. I bridge the gap between business needs and technology.
           </p>
 
           <div className="home__status">
@@ -20,11 +20,8 @@ const Home = () => {
           </div>
 
           <div className="home__actions">
-            <a href="#projects" className="btn btn-primary">Explore My Projects</a>
-            <a href="#contact" className="btn btn-outline">Contact Me</a>
-            <a href="/cv.pdf" download className="btn btn-outline" style={{padding: '0 16px', display: 'flex', alignItems: 'center'}}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </a>
+            <a href="#projects" className="btn btn-primary">View My Work</a>
+            <a href="#contact" className="btn btn-outline">Get In Touch</a>
           </div>
 
           <div className="home__links">
@@ -61,11 +58,6 @@ const Home = () => {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
             <div className="home__snapshot-title">IT SUPPORT</div>
             <div className="home__snapshot-desc">& ITSM</div>
-          </div>
-          <div className="home__snapshot-card">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <div className="home__snapshot-title">SECURITY</div>
-            <div className="home__snapshot-desc">Fundamentals</div>
           </div>
         </div>
       </div>

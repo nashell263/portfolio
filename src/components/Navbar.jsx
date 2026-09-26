@@ -13,11 +13,9 @@ const Navbar = () => {
 
   const links = [
     { label: 'Home', href: '#home' },
-    { label: 'Certs', href: '#certifications' },
-    { label: 'Career', href: '#career' },
-    { label: 'Work', href: '#work' },
+    { label: 'Experience', href: '#career' },
     { label: 'Projects', href: '#projects' },
-    { label: 'About', href: '#about' },
+    { label: 'Certifications', href: '#certifications' },
     { label: 'Contact', href: '#contact' },
   ]
 
@@ -32,7 +30,7 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <a href="/cv.pdf" download className="nav__cta btn btn-outline">Download CV</a>
+        <a href="#contact" className="nav__cta btn btn-outline">Get In Touch</a>
 
         <button
           className={`nav__hamburger ${menuOpen ? 'open' : ''}`}
@@ -50,8 +48,8 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <a href="/cv.pdf" download className="btn btn-primary" onClick={() => setMenuOpen(false)}>
-            Download CV
+          <a href="#contact" className="btn btn-primary" onClick={() => setMenuOpen(false)}>
+            Get In Touch
           </a>
         </div>
       )}

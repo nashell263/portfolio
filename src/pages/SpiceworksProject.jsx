@@ -12,6 +12,19 @@ import sp8 from '../assets/sp8-escalate-assign.png'
 import sp9 from '../assets/sp9-user-confirms.png'
 import sp10 from '../assets/sp10-ticket-closed.png'
 
+const screenshots = [
+  { id: 1, src: sp1, caption: 'Service desk environment' },
+  { id: 2, src: sp2, caption: 'Creating a ticket' },
+  { id: 3, src: sp3, caption: 'Ticket created successfully' },
+  { id: 4, src: sp4, caption: 'User support request' },
+  { id: 5, src: sp5, caption: 'Follow-up verification' },
+  { id: 6, src: sp6, caption: 'Escalation required' },
+  { id: 7, src: sp7, caption: 'Reviewing for escalation' },
+  { id: 8, src: sp8, caption: 'Assigning escalated ticket' },
+  { id: 9, src: sp9, caption: 'User confirms resolution' },
+  { id: 10, src: sp10, caption: 'Ticket formally closed' },
+]
+
 const SpiceworksProject = () => {
   const [lightboxImg, setLightboxImg] = useState(null)
 
@@ -22,8 +35,8 @@ const SpiceworksProject = () => {
   return (
     <div className="spiceworks-page">
       {/* Top Nav */}
-      <div style={{ position: 'sticky', top: 0, left: 0, right: 0, padding: '20px 40px', background: 'rgba(5, 11, 24, 0.95)', backdropFilter: 'blur(10px)', zIndex: 100, borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'flex-start' }}>
-        <a href="#home" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px' }}>
+      <div className="sp-top-nav">
+        <a href="#home" className="btn btn-outline sp-back-btn">
           ← Back to Home
         </a>
       </div>
@@ -39,233 +52,65 @@ const SpiceworksProject = () => {
       {/* 1. HERO SECTION */}
       <section className="spiceworks-hero">
         <div className="container">
-          <h1 className="sp-hero-title">Spiceworks — IT Service Desk Simulation</h1>
-          <h2 className="sp-hero-subtitle">Practical IT Support & Service Desk Workflow Simulation</h2>
+          <h1 className="sp-hero-title">IT Service Desk Simulation</h1>
+          <h2 className="sp-hero-subtitle">Spiceworks • IT Support • ITSM</h2>
           <p className="sp-hero-intro">
-            This project demonstrates my practical understanding of the operational realities of IT and security support through hands-on use of a Spiceworks ticketing environment.
+            Deployed a Spiceworks environment to simulate the full lifecycle of IT support tickets — from intake and prioritization through escalation, resolution, and closure.
           </p>
-          
-          <div className="sp-metadata">
-            <div className="sp-meta-item">
-              <span className="sp-meta-label">Tool</span>
-              <span className="sp-meta-value">Spiceworks</span>
-            </div>
-            <div className="sp-meta-item">
-              <span className="sp-meta-label">Category</span>
-              <span className="sp-meta-value">IT Support / IT Service Management</span>
-            </div>
-            <div className="sp-meta-item">
-              <span className="sp-meta-label">Project Type</span>
-              <span className="sp-meta-value">Practical Simulation</span>
-            </div>
-            <div className="sp-meta-item">
-              <span className="sp-meta-label">Status</span>
-              <span className="sp-meta-value">Completed</span>
-            </div>
-          </div>
         </div>
       </section>
 
       <div className="container">
-        {/* 2. PROJECT OVERVIEW */}
-        <section className="sp-section">
-          <h3 className="sp-section-title">Project Overview</h3>
-          <p className="sp-text">
-            I deployed a Spiceworks environment and practiced managing the full lifecycle of simulated user support tickets. The project focused on understanding how an IT Service Desk receives, tracks, manages, documents, escalates and resolves user issues efficiently.
-          </p>
-          <p className="sp-text">
-            I practiced the complete ticket lifecycle, including ticket intake, setting priorities, documenting troubleshooting steps, communicating with users, confirming resolution, escalating issues when necessary and formally closing tickets.
-          </p>
-          <p className="sp-text">
-            The project was designed to demonstrate that I can work within a structured IT Support process, manage different tasks, maintain clear documentation and communicate effectively throughout the support lifecycle.
-          </p>
-          <div className="sp-overview-tags">
-            {['Ticket Intake', 'Prioritization', 'Documentation', 'User Communication', 'Escalation', 'Resolution', 'Ticket Closure'].map(tag => (
-              <span key={tag} className="sp-tag">{tag}</span>
-            ))}
-          </div>
-        </section>
-
-        {/* 3. WHAT THIS PROJECT DEMONSTRATES */}
-        <section className="sp-section">
-          <h3 className="sp-section-title">What This Project Demonstrates</h3>
-          <div className="sp-demonstrates-grid">
-            <div className="sp-demo-card">
-              <h4>Structured Process</h4>
-              <p>Following a defined workflow from ticket intake through resolution and closure.</p>
-            </div>
-            <div className="sp-demo-card">
-              <h4>Task Management</h4>
-              <p>Managing different simulated support requests and maintaining their status throughout the ticket lifecycle.</p>
-            </div>
-            <div className="sp-demo-card">
-              <h4>Clear Documentation</h4>
-              <p>Recording troubleshooting actions, communication and resolution details clearly.</p>
-            </div>
-            <div className="sp-demo-card">
-              <h4>User Communication</h4>
-              <p>Communicating with users and confirming whether reported issues have been resolved.</p>
-            </div>
-            <div className="sp-demo-card">
-              <h4>Escalation</h4>
-              <p>Recognizing when an issue requires additional support and assigning it to the appropriate team or user.</p>
-            </div>
-            <div className="sp-demo-card">
-              <h4>IT Service Management</h4>
-              <p>Understanding how ticketing systems support the organization, tracking and resolution of IT issues.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* 4. FULL TICKET LIFECYCLE */}
-        <section className="sp-section">
-          <h3 className="sp-section-title">Managing the Full Ticket Lifecycle</h3>
-          <p className="sp-text">
-            I practiced managing support requests from the moment an issue was received until the ticket was resolved and formally closed. This helped me understand the importance of maintaining a structured process and an accurate record throughout an IT support interaction.
-          </p>
-          <div className="sp-timeline">
-            {['01 — Intake', '02 — Prioritize', '03 — Investigate', '04 — Document', '05 — Communicate', '06 — Escalate if Required', '07 — Confirm Resolution', '08 — Close Ticket'].map((step, idx, arr) => (
-              <div key={step}>
-                <div className="sp-timeline-item">{step}</div>
-                {idx < arr.length - 1 && <div className="sp-timeline-arrow">↓</div>}
+        {/* 2. KEY HIGHLIGHTS */}
+        <section className="sp-highlights-section">
+          <div className="sp-highlights-grid">
+            <div className="sp-highlight-card">
+              <h3>Ticket Lifecycle</h3>
+              <div className="sp-lifecycle">
+                <span>Intake</span> → <span>Prioritize</span> → <span>Investigate</span> → <span>Resolve</span> → <span>Close</span>
               </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="section-divider" style={{margin: '40px 0'}} />
-
-        {/* CASE STUDY 01 */}
-        <section className="sp-section sp-case-part">
-          <h3 className="sp-case-title">01 — Ticket Intake & Creation</h3>
-          <p className="sp-text">
-            I began by opening the Spiceworks service desk environment and simulating the intake of a user support request. I then created a support ticket and verified that the ticket was successfully recorded in the system.
-          </p>
-          <div className="sp-screenshot-group">
-            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp1)} style={{cursor: 'pointer'}}>
-              <img src={sp1} alt="Opening the Spiceworks service desk environment" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
-              <p className="sp-screenshot-caption">Opening the Spiceworks service desk environment</p>
             </div>
-            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp2)} style={{cursor: 'pointer'}}>
-              <img src={sp2} alt="Creating the first simulated support ticket" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
-              <p className="sp-screenshot-caption">Creating the first simulated support ticket</p>
+            
+            <div className="sp-highlight-card">
+              <h3>Skills Applied</h3>
+              <div className="sp-tags">
+                {['IT Support', 'ITSM', 'Ticket Management', 'Escalation', 'Documentation', 'Troubleshooting'].map(tag => (
+                  <span key={tag} className="sp-tag">{tag}</span>
+                ))}
+              </div>
             </div>
-            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp3)} style={{cursor: 'pointer'}}>
-              <img src={sp3} alt="Support ticket successfully created" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
-              <p className="sp-screenshot-caption">Support ticket successfully created</p>
+            
+            <div className="sp-highlight-card">
+              <h3>Tools & Approach</h3>
+              <div className="sp-tags">
+                <span className="sp-tag">Spiceworks</span>
+                <span className="sp-tag">Structured Process</span>
+                <span className="sp-tag">Clear Documentation</span>
+              </div>
             </div>
           </div>
         </section>
+      </div>
 
-        {/* CASE STUDY 02 */}
-        <section className="sp-section sp-case-part">
-          <h3 className="sp-case-title">02 — User Communication, Resolution & Closure</h3>
-          <p className="sp-text">
-            After working through the simulated support issue, I practiced communicating with the user to confirm whether the problem had been resolved. The ticket was only formally closed after the user confirmed that the issue was fixed.
-          </p>
-          <div className="sp-screenshot-group">
-            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp4)} style={{cursor: 'pointer'}}>
-              <img src={sp4} alt="Creating a simulated user support request" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
-              <p className="sp-screenshot-caption">Creating a simulated user support request</p>
+      {/* 3. SCREENSHOT GALLERY */}
+      <section className="sp-gallery-section">
+        <h3 className="sp-gallery-title">Project Gallery</h3>
+        <div className="sp-gallery-scroll">
+          {screenshots.map((shot) => (
+            <div key={shot.id} className="sp-gallery-card" onClick={() => setLightboxImg(shot.src)}>
+              <div className="sp-gallery-img-wrapper">
+                <img src={shot.src} alt={shot.caption} />
+              </div>
+              <p className="sp-gallery-caption">{shot.caption}</p>
             </div>
-            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp5)} style={{cursor: 'pointer'}}>
-              <img src={sp5} alt="Following up with the user to verify resolution" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
-              <p className="sp-screenshot-caption">Following up with the user to verify resolution</p>
-            </div>
-            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp9)} style={{cursor: 'pointer'}}>
-              <img src={sp9} alt="User confirms that the issue has been resolved" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
-              <p className="sp-screenshot-caption">User confirms that the issue has been resolved</p>
-            </div>
-            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp10)} style={{cursor: 'pointer'}}>
-              <img src={sp10} alt="Ticket formally closed after resolution confirmation" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
-              <p className="sp-screenshot-caption">Ticket formally closed after resolution confirmation</p>
-            </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* TICKET CLOSURE CHECKLIST */}
-        <section className="sp-section sp-case-part">
-          <h3 className="sp-case-title">Ticket Closure Checklist</h3>
-          <p className="sp-text">
-            Before closing a ticket, I practiced verifying that the reported issue had been addressed, documenting the relevant actions and confirming the outcome with the user.
-          </p>
-          <div className="sp-checklist">
-            <ul>
-              {['Issue investigated', 'Troubleshooting steps documented', 'User contacted', 'Resolution confirmed', 'Resolution notes recorded', 'Ticket status updated', 'Ticket formally closed'].map(item => (
-                <li key={item}>
-                  <svg className="sp-checklist-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M20 6L9 17l-5-5"/></svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* CASE STUDY 03 */}
-        <section className="sp-section sp-case-part">
-          <h3 className="sp-case-title">03 — Escalation & Assignment</h3>
-          <p className="sp-text">
-            Not every support issue can be resolved at the initial support level. I therefore simulated an incident that required escalation and practiced assigning the ticket to another team or user for further investigation.
-          </p>
-          <p className="sp-text" style={{ fontStyle: 'italic', color: 'var(--text-muted)' }}>
-            Escalation practice helped me understand the importance of recognizing when an issue requires additional expertise or intervention rather than attempting to resolve every issue at the initial support level.
-          </p>
-          <div className="sp-screenshot-group">
-            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp6)} style={{cursor: 'pointer'}}>
-              <img src={sp6} alt="Identifying a support issue requiring escalation" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
-              <p className="sp-screenshot-caption">Identifying a support issue requiring escalation</p>
-            </div>
-            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp7)} style={{cursor: 'pointer'}}>
-              <img src={sp7} alt="Reviewing the ticket before escalation" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
-              <p className="sp-screenshot-caption">Reviewing the ticket before escalation</p>
-            </div>
-            <div className="sp-screenshot-item" onClick={() => setLightboxImg(sp8)} style={{cursor: 'pointer'}}>
-              <img src={sp8} alt="Escalating and assigning the ticket to another team or user" style={{width: '100%', borderRadius: '8px', border: '1px solid var(--border)'}} />
-              <p className="sp-screenshot-caption">Escalating and assigning the ticket to another team or user</p>
-            </div>
-          </div>
-        </section>
-
-        <div className="section-divider" style={{margin: '40px 0'}} />
-
-        {/* SKILLS */}
-        <section className="sp-section">
-          <h3 className="sp-section-title">Skills Demonstrated</h3>
-          <div className="sp-overview-tags">
-            {['IT Support', 'IT Service Management', 'Ticket Management', 'Incident Management', 'Ticket Prioritization', 'Troubleshooting Documentation', 'User Communication', 'Incident Escalation', 'Ticket Assignment', 'Resolution Verification', 'Ticket Closure', 'Structured Problem Solving'].map(tag => (
-              <span key={tag} className="sp-tag">{tag}</span>
-            ))}
-          </div>
-        </section>
-
-        {/* WHAT I LEARNED */}
-        <section className="sp-section">
-          <h3 className="sp-section-title">What I Learned</h3>
-          <p className="sp-text">
-            This project reinforced that effective IT Support is not only about solving technical problems. It also involves managing the process surrounding each issue.
-          </p>
-          <p className="sp-text">
-            A properly managed ticket provides a clear record of what was reported, what actions were taken, how the user was supported, whether escalation was required and how the issue was ultimately resolved.
-          </p>
-          <p className="sp-text">
-            Through this simulation, I gained practical exposure to structured IT support workflows, ticket management, documentation, prioritization, user communication, escalation and resolution management.
-          </p>
-        </section>
-
-        {/* FINAL PROJECT SUMMARY */}
-        <section className="sp-section" style={{ background: 'var(--bg-surface)', padding: '40px', borderRadius: '12px' }}>
-          <h3 className="sp-section-title" style={{ marginBottom: '16px' }}>Project Summary</h3>
-          <p className="sp-text" style={{ marginBottom: '16px' }}>
-            Through this Spiceworks IT Service Desk Simulation, I demonstrated practical understanding of ticket-based IT support workflows, including ticket intake, prioritization, documentation, user communication, escalation, resolution verification and formal ticket closure.
-          </p>
-          <p className="sp-text" style={{ marginBottom: 0 }}>
-            The project demonstrates my ability to work within a structured process, manage multiple support tasks, document technical activity clearly and communicate effectively throughout the support lifecycle.
-          </p>
-        </section>
-
-        {/* BACK TO PROJECTS */}
+      <div className="container">
+        {/* 4. BACK TO HOME */}
         <section className="sp-footer">
-          <a href="#home" className="btn btn-outline" style={{ fontSize: '16px', padding: '14px 32px' }}>
+          <a href="#home" className="btn btn-outline sp-bottom-back-btn">
             ← Back to Home
           </a>
         </section>

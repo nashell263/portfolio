@@ -1,12 +1,9 @@
 import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
-import Certifications from './components/Certifications'
-import Skills from './components/Skills'
 import Career from './components/Career'
 import Projects from './components/Projects'
-import HowIWork from './components/HowIWork'
-import About from './components/About'
+import Certifications from './components/Certifications'
 import Contact from './components/Contact'
 import './App.css'
 
@@ -32,12 +29,9 @@ function App() {
       <Navbar />
       <main>
         <Home />
-        <Certifications />
-        <Skills />
         <Career />
         <Projects />
-        <HowIWork />
-        <About />
+        <Certifications />
         <Contact />
       </main>
     </>
