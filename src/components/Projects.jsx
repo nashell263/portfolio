@@ -56,6 +56,27 @@ const Projects = () => {
               </a>
             </div>
           </div>
+
+          {/* Data Cleaning */}
+          <div className="project__card">
+            <div className="project__content">
+              <span className="project__tag project__tag--green">Data Analytics</span>
+              <h4 className="project__title">Preparing & Cleaning Data for Analysis</h4>
+              <p className="project__description">
+                Cleaned and transformed a Bike Sales dataset in Excel — removing duplicates, handling blanks, parsing fields, standardizing formats, and validating data integrity.
+              </p>
+              <div className="project__tech">
+                {['Microsoft Excel', 'Data Cleaning', 'TRIM', 'Text to Columns', 'Conditional Formatting'].map(t => (
+                  <span key={t} className="project__tech-item">{t}</span>
+                ))}
+              </div>
+            </div>
+            <div className="project__actions">
+              <a href="#/projects/data-cleaning" className="btn btn-primary">
+                View Case Study →
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
