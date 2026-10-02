@@ -42,25 +42,6 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container" style={{marginTop: '60px'}}>
-        <div className="home__snapshot-grid">
-          <div className="home__snapshot-card">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            <div className="home__snapshot-title">INFORMATION SYSTEMS</div>
-            <div className="home__snapshot-desc">Graduate</div>
-          </div>
-          <div className="home__snapshot-card">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <div className="home__snapshot-title">SOFTWARE</div>
-            <div className="home__snapshot-desc">Development</div>
-          </div>
-          <div className="home__snapshot-card">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-            <div className="home__snapshot-title">IT SUPPORT</div>
-            <div className="home__snapshot-desc">& ITSM</div>
-          </div>
-        </div>
-      </div>
     </section>
   )
 }

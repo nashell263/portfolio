@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './Certifications.css'
 import ciscoCert from '../assets/cisco-cert.jpg'
+import dataAnalyticsCert from '../assets/data-analytics-cert.jpg'
 import nfcCert from '../assets/nfc-cert.jpg'
 
 const Certifications = () => {
@@ -47,6 +48,41 @@ const Certifications = () => {
 
               <a 
                 href="https://www.credly.com/badges/6eae317b-257b-407c-bcaf-190d5427e956/public_url" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="btn btn-outline cert__btn"
+              >
+                Verify Credential
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Data Analytics Essentials */}
+          <div className="cert__card">
+            <div className="cert__image-container" onClick={() => setLightboxImg(dataAnalyticsCert)} style={{cursor: 'pointer'}}>
+              <div className="cert__image-overlay">View Certificate</div>
+              <img src={dataAnalyticsCert} alt="Data Analytics Essentials Certificate" className="cert__image" />
+            </div>
+            <div className="cert__content">
+              <div className="cert__header">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" 
+                  alt="Cisco Logo" 
+                  className="cert__company-logo" 
+                />
+                <span className="cert__date">Issued Oct 2026</span>
+              </div>
+              
+              <h4 className="cert__title">Data Analytics Essentials</h4>
+              <p className="cert__issuer">Cisco Networking Academy</p>
+              
+              <div className="cert__details">
+                <p><strong>Credential ID:</strong> 19d22e87-c20e-4425-9453-c188113e3a20</p>
+              </div>
+
+              <a 
+                href="https://www.credly.com/badges/e6eb706c-77d6-4bbc-b29b-716b7e1245fc" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="btn btn-outline cert__btn"
