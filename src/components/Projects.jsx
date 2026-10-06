@@ -10,6 +10,27 @@ const Projects = () => {
         </h3>
 
         <div className="projects__grid reveal">
+          {/* AI Workflow - Favorite Project */}
+          <div className="project__card">
+            <div className="project__content">
+              <span className="project__tag project__tag--purple">⭐ Favorite Project</span>
+              <h4 className="project__title">AI-Powered Multi-Agent Customer Support Workflow</h4>
+              <p className="project__description">
+                Built an end-to-end AI automation pipeline using n8n — incoming emails are classified, routed to specialized AI agents, enriched via RAG from Supabase, drafted in Gmail, and sent to Slack for human review.
+              </p>
+              <div className="project__tech">
+                {['n8n', 'OpenAI', 'Supabase', 'Gmail', 'Slack', 'RAG'].map(t => (
+                  <span key={t} className="project__tech-item">{t}</span>
+                ))}
+              </div>
+            </div>
+            <div className="project__actions">
+              <a href="#/projects/ai-workflow" className="btn btn-primary">
+                View Case Study →
+              </a>
+            </div>
+          </div>
+
           {/* EmoSense */}
           <div className="project__card">
             <div className="project__content">

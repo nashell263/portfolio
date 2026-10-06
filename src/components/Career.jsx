@@ -8,7 +8,8 @@ const Career = () => {
   const skills = [
     'JavaScript', 'React', 'Python', 'Node.js', 'SQL', 'MySQL',
     'IT Support', 'ITSM', 'Spiceworks', 'Git', 'GitHub',
-    'Networking', 'Windows OS', 'REST APIs', 'Dart', 'Flutter'
+    'Networking', 'Windows OS', 'REST APIs', 'Dart', 'Flutter',
+    'AI Automation', 'n8n', 'Data Analytics', 'Microsoft Excel'
   ]
 
   return (

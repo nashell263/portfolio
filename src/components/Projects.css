@@ -56,6 +56,12 @@
   color: #22c55e;
 }
 
+.project__tag--purple {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+}
+
 .project__title {
   font-size: 22px;
   font-weight: 700;

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import App from './App'
 import SpiceworksProject from './pages/SpiceworksProject'
 import DataCleaningProject from './pages/DataCleaningProject'
+import AIWorkflowProject from './pages/AIWorkflowProject'
 
 const Router = () => {
   const [currentPath, setCurrentPath] = useState(window.location.hash)
@@ -22,6 +23,10 @@ const Router = () => {
 
   if (currentPath === '#/projects/data-cleaning') {
     return <DataCleaningProject />
+  }
+
+  if (currentPath === '#/projects/ai-workflow') {
+    return <AIWorkflowProject />
   }
 
   return <App />
