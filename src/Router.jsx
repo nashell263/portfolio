@@ -3,6 +3,7 @@ import App from './App'
 import SpiceworksProject from './pages/SpiceworksProject'
 import DataCleaningProject from './pages/DataCleaningProject'
 import AIWorkflowProject from './pages/AIWorkflowProject'
+import AIResumeProject from './pages/AIResumeProject'
 
 const Router = () => {
   const [currentPath, setCurrentPath] = useState(window.location.hash)
@@ -27,6 +28,10 @@ const Router = () => {
 
   if (currentPath === '#/projects/ai-workflow') {
     return <AIWorkflowProject />
+  }
+
+  if (currentPath === '#/projects/ai-resume') {
+    return <AIResumeProject />
   }
 
   return <App />

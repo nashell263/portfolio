@@ -31,6 +31,27 @@ const Projects = () => {
             </div>
           </div>
 
+          {/* AI Resume Screening */}
+          <div className="project__card">
+            <div className="project__content">
+              <span className="project__tag project__tag--amber">AI Automation</span>
+              <h4 className="project__title">AI-Powered Resume Screening Workflow</h4>
+              <p className="project__description">
+                Automated recruitment screening — candidates submit CVs via a form, an AI Agent scores them against job requirements, sends confirmation emails, and stores structured results in Notion.
+              </p>
+              <div className="project__tech">
+                {['n8n', 'OpenAI', 'Google Drive', 'Gmail', 'Notion'].map(t => (
+                  <span key={t} className="project__tech-item">{t}</span>
+                ))}
+              </div>
+            </div>
+            <div className="project__actions">
+              <a href="#/projects/ai-resume" className="btn btn-primary">
+                View Case Study →
+              </a>
+            </div>
+          </div>
+
           {/* EmoSense */}
           <div className="project__card">
             <div className="project__content">

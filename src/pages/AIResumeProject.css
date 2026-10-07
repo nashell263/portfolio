@@ -1,0 +1,80 @@
+/* ===== AI Resume Screening Project ===== */
+
+.air-page { background: var(--bg); min-height: 100vh; padding-bottom: 80px; }
+
+.air-top-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 16px 32px; background: rgba(17,17,17,0.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); }
+.air-back-btn { font-size: 13px; }
+
+/* Hero */
+.air-hero { padding: 120px 0 60px; background: var(--bg-surface); border-bottom: 1px solid var(--border); text-align: center; }
+.air-hero-badge { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: #f59e0b; background: rgba(245,158,11,0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(245,158,11,0.2); margin-bottom: 24px; }
+.air-hero-title { font-size: clamp(28px,4.5vw,48px); font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.1; }
+.air-hero-subtitle { font-size: clamp(16px,2.5vw,22px); color: var(--accent); font-weight: 500; margin-bottom: 24px; }
+.air-hero-intro { font-size: 17px; color: var(--text-secondary); max-width: 720px; margin: 0 auto 48px; line-height: 1.7; }
+.air-hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.air-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.air-stat-number { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: #f59e0b; }
+.air-stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600; }
+
+/* Flow */
+.air-flow-section { padding: 32px 0; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.air-flow { display: flex; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; padding: 8px 0; }
+.air-flow-item { display: flex; align-items: center; gap: 4px; }
+.air-flow-arrow { color: var(--text-muted); font-size: 14px; }
+.air-flow-label { font-size: 12px; font-weight: 600; color: var(--text); background: var(--bg-surface); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); white-space: nowrap; }
+
+/* AI Output Grid */
+.air-output-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+.air-output-heading { font-size: 28px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 12px; }
+.air-output-intro { font-size: 15px; color: var(--text-secondary); text-align: center; margin-bottom: 48px; }
+.air-output-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.air-output-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; transition: border-color 0.3s ease; }
+.air-output-card:hover { border-color: #f59e0b; }
+.air-output-card span { font-size: 28px; display: block; margin-bottom: 10px; }
+.air-output-card h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.air-output-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+/* Steps */
+.air-steps-section { padding: 80px 0; }
+.air-steps-heading { font-size: 28px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 64px; }
+.air-steps { display: flex; flex-direction: column; gap: 48px; }
+.air-step { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: border-color 0.3s ease; }
+.air-step:hover { border-color: rgba(245,158,11,0.3); }
+.air-step-header { display: flex; gap: 20px; padding: 32px 32px 24px; align-items: flex-start; }
+.air-step-icon { font-size: 36px; flex-shrink: 0; }
+.air-step-info { flex: 1; }
+.air-step-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #f59e0b; font-weight: 700; display: block; margin-bottom: 6px; }
+.air-step-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.air-step-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+.air-step-image { margin: 0 32px 32px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease, border-color 0.3s ease; }
+.air-step-image:hover { transform: translateY(-3px); border-color: #f59e0b; }
+.air-step-image img { width: 100%; display: block; }
+.air-step-caption { font-size: 12px; color: var(--text-muted); padding: 12px 16px; text-align: center; border-top: 1px solid var(--border); font-weight: 500; }
+
+/* Tech */
+.air-tech-section { padding: 80px 0; background: var(--bg-surface); border-top: 1px solid var(--border); }
+.air-tech-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.air-tech-left h3, .air-tech-right h3 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 20px; }
+.air-tech-right p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+.air-tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.air-tech-tag { font-size: 12px; color: var(--text); background: var(--bg); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); font-weight: 500; }
+
+/* Footer */
+.air-footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border); }
+
+/* Lightbox */
+.air-lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.92); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 40px; cursor: pointer; }
+.air-lightbox-img { max-width: 95%; max-height: 90vh; object-fit: contain; border-radius: 8px; cursor: default; }
+.air-lightbox-close { position: absolute; top: 24px; right: 24px; color: #fff; font-size: 36px; cursor: pointer; z-index: 10000; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .air-output-grid { grid-template-columns: 1fr 1fr; }
+  .air-tech-split { grid-template-columns: 1fr; }
+  .air-step-header { flex-direction: column; gap: 12px; padding: 24px 20px 16px; }
+  .air-step-image { margin: 0 20px 24px; }
+  .air-hero-stats { gap: 24px; }
+}
+@media (max-width: 480px) {
+  .air-output-grid { grid-template-columns: 1fr; }
+}
