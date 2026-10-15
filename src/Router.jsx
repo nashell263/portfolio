@@ -4,6 +4,7 @@ import SpiceworksProject from './pages/SpiceworksProject'
 import DataCleaningProject from './pages/DataCleaningProject'
 import AIWorkflowProject from './pages/AIWorkflowProject'
 import AIResumeProject from './pages/AIResumeProject'
+import PowerBIProject from './pages/PowerBIProject'
 
 const Router = () => {
   const [currentPath, setCurrentPath] = useState(window.location.hash)
@@ -32,6 +33,10 @@ const Router = () => {
 
   if (currentPath === '#/projects/ai-resume') {
     return <AIResumeProject />
+  }
+
+  if (currentPath === '#/projects/powerbi-survey') {
+    return <PowerBIProject />
   }
 
   return <App />

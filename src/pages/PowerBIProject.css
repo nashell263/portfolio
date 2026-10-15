@@ -1,0 +1,100 @@
+/* ===== Power BI Project Page ===== */
+
+.pbi-page { background: var(--bg); min-height: 100vh; padding-bottom: 80px; }
+
+.pbi-top-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 16px 32px; background: rgba(17,17,17,0.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); }
+.pbi-back-btn { font-size: 13px; }
+
+/* Hero */
+.pbi-hero { padding: 120px 0 60px; background: var(--bg-surface); border-bottom: 1px solid var(--border); text-align: center; }
+.pbi-hero-badge { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: #f2c811; background: rgba(242,200,17,0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(242,200,17,0.2); margin-bottom: 24px; }
+.pbi-hero-title { font-size: clamp(28px,4.5vw,44px); font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.1; }
+.pbi-hero-subtitle { font-size: clamp(16px,2.5vw,22px); color: var(--accent); font-weight: 500; margin-bottom: 24px; }
+.pbi-hero-intro { font-size: 16px; color: var(--text-secondary); max-width: 720px; margin: 0 auto 16px; line-height: 1.7; }
+.pbi-hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 40px; }
+.pbi-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.pbi-stat-number { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: #f2c811; }
+.pbi-stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600; }
+
+/* Skills */
+.pbi-skills-section { padding: 32px 0; border-bottom: 1px solid var(--border); }
+.pbi-skills-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.pbi-skill-tag { font-size: 12px; color: #f2c811; background: rgba(242,200,17,0.08); padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(242,200,17,0.15); font-weight: 500; }
+
+/* Dashboard Screenshot */
+.pbi-dashboard-section { padding: 80px 0; }
+.pbi-section-heading { font-size: 28px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 48px; }
+.pbi-dashboard-image { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+.pbi-dashboard-image:hover { transform: translateY(-4px); border-color: #f2c811; box-shadow: 0 8px 32px rgba(242,200,17,0.08); }
+.pbi-dashboard-image img { width: 100%; display: block; }
+.pbi-dashboard-caption { font-size: 13px; color: var(--text-muted); padding: 14px 16px; text-align: center; border-top: 1px solid var(--border); background: var(--bg-surface); font-weight: 500; }
+
+/* Business Questions */
+.pbi-questions-section { padding: 80px 0; background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.pbi-questions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.pbi-question-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; gap: 14px; align-items: flex-start; transition: border-color 0.3s ease; }
+.pbi-question-card:hover { border-color: #f2c811; }
+.pbi-question-icon { font-size: 24px; flex-shrink: 0; }
+.pbi-question-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+/* Workflow */
+.pbi-workflow-section { padding: 80px 0; }
+.pbi-workflow-steps { display: flex; flex-direction: column; gap: 32px; }
+.pbi-workflow-step { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: border-color 0.3s ease; }
+.pbi-workflow-step:hover { border-color: rgba(242,200,17,0.3); }
+.pbi-workflow-header { display: flex; gap: 20px; padding: 32px; align-items: flex-start; }
+.pbi-workflow-num { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: rgba(242,200,17,0.3); flex-shrink: 0; line-height: 1; }
+.pbi-workflow-info { flex: 1; }
+.pbi-workflow-info h4 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.pbi-workflow-info p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+
+/* Findings */
+.pbi-findings-section { padding: 80px 0; background: var(--bg-surface); border-top: 1px solid var(--border); }
+.pbi-findings-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.pbi-finding-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; transition: border-color 0.3s ease; }
+.pbi-finding-card:hover { border-color: #f2c811; }
+.pbi-finding-icon { font-size: 28px; display: block; margin-bottom: 10px; }
+.pbi-finding-card h4 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.pbi-finding-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.pbi-findings-note { text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 32px; }
+
+/* Learning */
+.pbi-learning-section { padding: 80px 0; }
+.pbi-learning-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.pbi-learning-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px; text-align: center; transition: border-color 0.3s ease; }
+.pbi-learning-card:hover { border-color: #f2c811; }
+.pbi-learning-icon { font-size: 28px; margin-bottom: 12px; }
+.pbi-learning-card h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.pbi-learning-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+/* Resources */
+.pbi-resources-section { padding: 80px 0; background: var(--bg-surface); border-top: 1px solid var(--border); }
+.pbi-resources-note { text-align: center; font-size: 14px; color: var(--text-secondary); margin-bottom: 32px; }
+.pbi-resources-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 640px; margin: 0 auto; }
+.pbi-resource-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; text-decoration: none; transition: border-color 0.3s ease, transform 0.3s ease; }
+.pbi-resource-card:hover { border-color: #f2c811; transform: translateY(-3px); }
+.pbi-resource-icon { font-size: 28px; display: block; margin-bottom: 10px; }
+.pbi-resource-card h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.pbi-resource-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+/* Footer */
+.pbi-footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border); }
+
+/* Lightbox */
+.pbi-lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.92); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 40px; cursor: pointer; }
+.pbi-lightbox-img { max-width: 95%; max-height: 90vh; object-fit: contain; border-radius: 8px; cursor: default; }
+.pbi-lightbox-close { position: absolute; top: 24px; right: 24px; color: #fff; font-size: 36px; cursor: pointer; z-index: 10000; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pbi-questions-grid { grid-template-columns: 1fr 1fr; }
+  .pbi-findings-grid { grid-template-columns: 1fr 1fr; }
+  .pbi-learning-grid { grid-template-columns: 1fr; }
+  .pbi-resources-grid { grid-template-columns: 1fr; }
+  .pbi-workflow-header { flex-direction: column; gap: 12px; padding: 24px 20px; }
+  .pbi-hero-stats { gap: 24px; }
+}
+@media (max-width: 480px) {
+  .pbi-questions-grid { grid-template-columns: 1fr; }
+  .pbi-findings-grid { grid-template-columns: 1fr; }
+}

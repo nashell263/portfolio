@@ -119,6 +119,27 @@ const Projects = () => {
               </a>
             </div>
           </div>
+
+          {/* Power BI Survey Dashboard */}
+          <div className="project__card">
+            <div className="project__content">
+              <span className="project__tag project__tag--green">Data Analytics</span>
+              <h4 className="project__title">Data Professional Survey Analysis Dashboard</h4>
+              <p className="project__description">
+                Analysed survey responses from data professionals using Power BI. Cleaned and transformed data with Power Query and developed visualisations to explore salary trends, job roles, programming language preferences, and career satisfaction.
+              </p>
+              <div className="project__tech">
+                {['Power BI', 'Power Query', 'Excel', 'Data Visualisation', 'Business Intelligence'].map(t => (
+                  <span key={t} className="project__tech-item">{t}</span>
+                ))}
+              </div>
+            </div>
+            <div className="project__actions">
+              <a href="#/projects/powerbi-survey" className="btn btn-primary">
+                View Project →
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
